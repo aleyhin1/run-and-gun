@@ -10,4 +10,9 @@ public class PooledObject : MonoBehaviour
     {
         Pool.ReturnToBulletPool(this);
     }
+
+    public void ReleaseToEnemyPool()
+    {
+        Pool.ReturnToEnemyPool(this);
+    }
 }

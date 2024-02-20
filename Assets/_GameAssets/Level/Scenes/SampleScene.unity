@@ -746,10 +746,21 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 220320007205258744, guid: abc6ad89c94bd3c49bba2945f5b8e3d0,
         type: 3}
+      propertyPath: _enemyToPool
+      value: 
+      objectReference: {fileID: -8221951400467110440, guid: 8e34e165d7814d748a6e855fe0061c7e,
+        type: 3}
+    - target: {fileID: 220320007205258744, guid: abc6ad89c94bd3c49bba2945f5b8e3d0,
+        type: 3}
       propertyPath: _bulletToPool
       value: 
       objectReference: {fileID: 5351877455160180301, guid: 9762185219c0b784bb2e14f5246e9a7e,
         type: 3}
+    - target: {fileID: 220320007205258744, guid: abc6ad89c94bd3c49bba2945f5b8e3d0,
+        type: 3}
+      propertyPath: _enemyPoolSize
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 220320007205258744, guid: abc6ad89c94bd3c49bba2945f5b8e3d0,
         type: 3}
       propertyPath: _bulletPoolSize
@@ -893,6 +904,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 25778049, guid: a09742617eaeeec4596373dc56763c48, type: 3}
+      propertyPath: _spawnCooldown
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5131468952002512726, guid: a09742617eaeeec4596373dc56763c48,
         type: 3}
       propertyPath: m_RootOrder

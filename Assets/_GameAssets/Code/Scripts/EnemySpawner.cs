@@ -20,8 +20,14 @@ public class EnemySpawner : MonoBehaviour
 
         if (_time > _spawnCooldown)
         {
-            Debug.Log(GetRandomSpawnablePoint().transform.position);
             _time = 0;
+            SpawnPoint spawnPoint = GetRandomSpawnablePoint();
+
+            if (spawnPoint != null)
+            {
+                PooledObject enemy = ObjectPool.Instance.GetPooledEnemy();
+                enemy.transform.position = spawnPoint.transform.position;
+            }
         }
     }
 

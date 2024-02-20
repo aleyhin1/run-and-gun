@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private AnimationCurve _movementCurve;
     [SerializeField] private PlayerAnimation _playerAnim;
+    [SerializeField] private Transform _bulletSpawnPoint;
     private bool _isShooting;
     private float _shootingCooldown = 1f;
     private float _time = 0;
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
         if (isShootPressed && !_isShooting)
         {
             StartCoroutine(ShootingTimer(_shootingCooldown));
+            StartCoroutine(Shoot());
             _playerAnim.SetShootAnimation();
         }
         else if (movementVector != Vector3.zero && !_isShooting)
@@ -39,6 +41,14 @@ public class PlayerController : MonoBehaviour
             _time = 0;
             OnIdle?.Invoke();
         }
+    }
+
+    private IEnumerator Shoot()
+    {
+        yield return new WaitForSeconds(.5f);
+        PooledObject bullet = ObjectPool.Instance.GetPooledBullet();
+        bullet.transform.position = _bulletSpawnPoint.position;
+        bullet.transform.rotation = transform.rotation;
     }
 
     private IEnumerator ShootingTimer(float cooldown)

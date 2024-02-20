@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
+    public static ObjectPool Instance {  get; private set; }
     [SerializeField] private uint _bulletPoolSize;
     [SerializeField] private PooledObject _bulletToPool;
     private Stack<PooledObject> _bulletStack;
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(Instance);
+        }
+        Instance = this;
+    }
 
     private void Start()
     {

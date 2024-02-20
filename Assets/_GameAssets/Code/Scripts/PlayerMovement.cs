@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour
     public event Action OnIdle;
     [SerializeField] private CharacterController _characterController;
     [SerializeField] private float _speed;
+    [SerializeField] private AnimationCurve _movementCurve;
+    [SerializeField] private PlayerAnimation _playerAnim;
+    private float _time = 0;
 
     private void Update()
     {
@@ -19,13 +22,27 @@ public class PlayerMovement : MonoBehaviour
 
         if (movementVector != Vector3.zero)
         {
+            Move(movementVector);
+            TurnTo(movementVector);
             OnMovement?.Invoke();
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movementVector), .1f);
-            _characterController.Move(movementVector * Time.deltaTime * _speed);
         }
         else
         {
+            _time = 0;
             OnIdle?.Invoke();
         }
+    }
+
+    private void TurnTo(Vector3 directionToTurn)
+    {
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(directionToTurn), .1f);
+    }
+
+    private void Move(Vector3 direction)
+    {
+        _time += Time.deltaTime;
+        float curveMultiplier = _movementCurve.Evaluate(_time);
+        _playerAnim.SetMoveSpeed(curveMultiplier);
+        _characterController.Move(direction * _speed * curveMultiplier * Time.deltaTime);
     }
 }

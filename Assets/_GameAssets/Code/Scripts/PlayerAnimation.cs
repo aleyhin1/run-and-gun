@@ -22,4 +22,9 @@ public class PlayerAnimation : MonoBehaviour
     {
         _animator.SetBool("isMoving", false);
     }
+
+    public void SetMoveSpeed(float moveSpeed)
+    {
+        _animator.SetFloat("moveSpeed", moveSpeed);
+    }
 }

@@ -102,6 +102,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterController: {fileID: -2352274889486676113}
   _speed: 2
+  _movementCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0000005736947
+      value: 0.49011716
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 2.0012052
+      value: 0.999999
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _playerAnim: {fileID: -2164344402856956752}
 --- !u!1 &6105300951100760416
 GameObject:
   m_ObjectHideFlags: 0

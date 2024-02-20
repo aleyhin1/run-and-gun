@@ -12,12 +12,8 @@ public class Bullet : MonoBehaviour
         transform.Translate(Vector3.forward * _bulletSpeed * Time.deltaTime, Space.Self);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
         _pooledObject.ReleaseToBulletPool();
-
-        if (other.CompareTag("SceneLimit"))
-        {
-        }
     }
 }

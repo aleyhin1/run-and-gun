@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerAnimation _playerAnim;
     [SerializeField] private Transform _bulletSpawnPoint;
     [SerializeField] private ParticleSystem _shootVFX;
+    [SerializeField] private AudioSource _audioSource;
     private bool _isShooting;
     private float _shootingCooldown = 1f;
     private float _time = 0;
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Shoot());
             _playerAnim.SetShootAnimation();
             _shootVFX.Play();
+            _audioSource.PlayOneShot(_audioSource.clip);
         }
         else if (movementVector != Vector3.zero && !_isShooting)
         {

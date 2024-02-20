@@ -981,41 +981,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2994735481685211531, guid: b588f5b1fc712404d80caf878e57f688,
-        type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2994735481685211531, guid: b588f5b1fc712404d80caf878e57f688,
-        type: 3}
-      propertyPath: prewarm
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2994735481685211531, guid: b588f5b1fc712404d80caf878e57f688,
-        type: 3}
-      propertyPath: stopAction
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2994735481685211531, guid: b588f5b1fc712404d80caf878e57f688,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2994735481685211531, guid: b588f5b1fc712404d80caf878e57f688,
-        type: 3}
-      propertyPath: moveWithTransform
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2994735481685211531, guid: b588f5b1fc712404d80caf878e57f688,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2994735481685211531, guid: b588f5b1fc712404d80caf878e57f688,
-        type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6105300950836774190, guid: b588f5b1fc712404d80caf878e57f688,
         type: 3}
       propertyPath: m_Name

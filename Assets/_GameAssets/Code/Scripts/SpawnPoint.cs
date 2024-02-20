@@ -8,11 +8,11 @@ public class SpawnPoint : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        Spawner.SetPointAvailable(this, false);
+        Spawner.SetPointAvailable(this, true);
     }
 
     private void OnBecameVisible()
     {
-        Spawner.SetPointAvailable(this, true);
+        Spawner.SetPointAvailable(this, false);
     }
 }

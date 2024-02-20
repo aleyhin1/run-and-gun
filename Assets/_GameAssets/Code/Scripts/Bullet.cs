@@ -14,9 +14,10 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        _pooledObject.ReleaseToBulletPool();
+
         if (other.CompareTag("SceneLimit"))
         {
-            _pooledObject.ReleaseToBulletPool();
         }
     }
 }

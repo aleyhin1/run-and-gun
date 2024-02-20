@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
         if (collision.collider.CompareTag("Bullet"))
         {
             Die();
-            collision.collider.GetComponent<PooledObject>().ReleaseToBulletPool();
+            //collision.collider.GetComponent<PooledObject>().ReleaseToBulletPool();
         }
     }
 

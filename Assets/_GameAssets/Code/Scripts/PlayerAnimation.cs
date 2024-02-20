@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
-    [SerializeField] private PlayerMovement _playerMovement;
+    [SerializeField] private PlayerController _playerMovement;
 
     private void Start()
     {
@@ -13,14 +13,22 @@ public class PlayerAnimation : MonoBehaviour
         _playerMovement.OnIdle += SetIdleAnimation;
     }
 
+    public void SetShootAnimation()
+    {
+        _animator.SetBool("isShooting", true);
+        _animator.SetBool("isMoving", false);
+    }
+
     public void SetWalkAnimation()
     {
         _animator.SetBool("isMoving", true);
+        _animator.SetBool("isShooting", false);
     }
 
     public void SetIdleAnimation()
     {
         _animator.SetBool("isMoving", false);
+        _animator.SetBool("isShooting", false);
     }
 
     public void SetMoveSpeed(float moveSpeed)
